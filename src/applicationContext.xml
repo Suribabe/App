@@ -7,17 +7,28 @@
 	     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
+	
 	<bean id="loginController" class="com.pb.web.controller.LoginController">
 		<property name="successView" value="showAccount"></property>
 		<property name="failView" value="login"></property>
 	</bean>
+	
+	<bean id="signController" class="com.pb.web.controller.SignController">
+		<property name="success" value="showAccount"></property>		
+	</bean>
+	   
+		
 	<bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
 		<property name="mappings">
 			<props>
 				<prop key="/login.do">loginController</prop>
+				<prop key="/signUp.do">signController</prop>
 			</props>
+			
 		</property>
-	</bean>
+	</bean>	
+	
+	
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/"></property>
 		<property name="suffix" value=".jsp"></property>

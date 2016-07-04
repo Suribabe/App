@@ -21,7 +21,7 @@ public class LoginController extends AbstractController {
 	public void setSuccessView(String successView) {
 		this.successView = successView;
 	}
-	public String getFailView() {
+	public String getFailView() { 
 		return failView;
 	}
 	public void setFailView(String failView) {
